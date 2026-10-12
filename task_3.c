@@ -3,7 +3,7 @@
 int main()
 {
     SetConsoleOutputCP(CP_UTF8);
-    int n, l=1;
+    int n;
     printf("Зима - 1\nВесна - 2\nЛіто - 3\nОсінь - 4\nВведіть пору року: ");
     scanf("%d", &n);
     switch (n){
