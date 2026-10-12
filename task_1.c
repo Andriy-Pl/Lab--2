@@ -1,22 +1,24 @@
 # include <stdio.h>
-# include <math.h>
 # include <windows.h>
 
 int main(){
     SetConsoleOutputCP(CP_UTF8);
     
-    int x, y, z;
-    float arithAveragen, geomAveragen;
+    float x1, x2, x3;
     printf("Введіть 3 числа: ");
-    scanf("%d %d %d",&x, &y, &z);
-    arithAveragen = (x+y+z)/3.;
-    geomAveragen = cbrt(x*y*z);
-    if(arithAveragen > geomAveragen){
-        printf("Середнє арифметичне більше");
-    }else if (arithAveragen == geomAveragen){
-        printf("Середнє арифметичне = середньому геометричному");
+    scanf("%f %f %f",&x1, &x2, &x3);
+    
+    if((x1<x2 && x2<x3) || (x3<x2 && x2<x1)){
+        printf("Точка %g лежить між %g та %g",x2, x1, x3);
+    }else if ((x3<x1 && x1<x2) || (x2<x1 && x1<x3))
+    {
+        printf("Точка %g лежить між %g та %g",x1 ,x3, x2);
+    }else if ((x1<x3 && x3<x2)||(x2<x3 && x3<x1))
+    {
+       printf("Точка %g лежить між %g та %g",x3 ,x1, x2);
     }else{
-        printf("Середнє геометричне більше");
+        printf("Координати співпадають");
     }
+
     return 0;
 }
